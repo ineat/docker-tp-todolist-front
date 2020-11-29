@@ -1,29 +1,40 @@
-# docker-tp-todolist-front
+# Formation DOCKER : TP WebApp - Front
 
-## Project setup
+## Prérequis
+
+Pour lancer localement l'application les outils suivant sont nécessaires sur le poste de développement :
+- node v14.6.0
+- npm v6.14.6
+
+## Installation des dépendances
+
+Les dépendances s'installent comme suit (commande à lancer à la racine du projet):
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Exécution locale de l'application
+
+### Compilation et hot-reloads (phases de development)
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compilation et minification (mise en production)
 ```
 npm run build
 ```
 
-### Run your tests
+### Lancement des tests
 ```
 npm run test
 ```
 
-### Lints and fixes files
+### Lints
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Customisation de la configuration
+Voir [Configuration Reference](https://cli.vuejs.org/config/).
