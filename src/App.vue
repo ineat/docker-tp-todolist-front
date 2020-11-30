@@ -35,7 +35,8 @@ export default {
     }
   },
   async beforeCreate() {
-    await axios("http://localhost:3000/todos", {
+
+    await axios(`${process.env.TODOS_API_URL}/todos`, {
         method: "GET"
       }).then(response => {
         console.log(response);
@@ -45,15 +46,15 @@ export default {
   methods: {
     async addTodo() {
       if (this.entry !== '') {
-        await axios.post("http://localhost:3000/todos", {description: this.entry}).then(response => {
-          axios.get("http://localhost:3000" + response.headers["location"]).then(res => {
+        await axios.post(`${process.env.TODOS_API_URL}/todos`, {description: this.entry}).then(response => {
+          axios.get(process.env.TODOS_API_URL + response.headers["location"]).then(res => {
             this.todolist.push(res.data);
           })
         })
       }
     },
     async closeTodo(todo, index) {
-      await axios.delete("http://localhost:3000/todos/" + todo._id).then(() => {
+      await axios.delete(`${process.env.TODOS_API_URL}/todos/${todo._id}`).then(() => {
         this.todolist.splice(index, 1);
       })
     }
